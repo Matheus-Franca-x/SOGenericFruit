@@ -24,20 +24,35 @@ public class Controller {
 			BufferedReader buffer = new BufferedReader(lerFlux);
 			String linha = buffer.readLine();
 			
-			System.out.println("Food Name \t\t\t Scientific Name \t\t\t Sub Group");
+			System.out.println("Food Name" + espaco("Food Name".length()) + "Scientific Name" + espaco("Scientific Name".length()) + "Sub Group");
 			
 			while(linha != null)
 			{
 				String[] vetLinha = linha.split(",");
 				if(vetLinha[2].contains("Fruits"))
 				{
-					System.out.println(vetLinha[0] + "\t\t\t" + vetLinha[1] + "\t\t\t" + vetLinha[3]);
+					System.out.println(vetLinha[0] + espaco(vetLinha[0].length()) + vetLinha[1] + espaco(vetLinha[1].length()) + vetLinha[3]);
 				}
 				linha = buffer.readLine();
 			}
 			buffer.close();
 			lerFlux.close();
 			abreFlux.close();
+		}
+	}
+	
+	public String espaco(int i)
+	{
+		StringBuffer buffer = new StringBuffer();
+		if(i == 50)
+		{
+			return buffer.append(" ").toString();
+		}
+		else
+		{
+			buffer.append(" ");
+			buffer.append(espaco(i+1));
+			return buffer.toString();
 		}
 	}
 	
