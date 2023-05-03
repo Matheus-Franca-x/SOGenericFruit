@@ -45,7 +45,7 @@ public class Controller {
 		}
 	}
 	
-	public String espaco(int i)
+	private String espaco(int i)
 	{
 		StringBuffer buffer = new StringBuffer();
 		if(i == 50)
