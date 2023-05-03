@@ -39,6 +39,10 @@ public class Controller {
 			lerFlux.close();
 			abreFlux.close();
 		}
+		else
+		{
+			throw new IOException("Nao e um file!!!");
+		}
 	}
 	
 	public String espaco(int i)
